@@ -16,7 +16,7 @@ solution not to handle this scenario as an error, as long as the decision was ma
 
 clarify
     - board is 3x3 items are represented as strings
-    - player vs AI 
+    - player vs player 
     - return message when game is completed, message will vary depending on who won
     - account for invalid input 
     - account for a tie between players 
