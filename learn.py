@@ -25,3 +25,4 @@ class Dog(Animal):
         self.breed = breed
 
 goldrenRetriver = Dog(species="Dog", color="golden", breed="golden retriever")
+goldrenRetriver.typeOfAnimal() 

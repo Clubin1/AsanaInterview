@@ -21,24 +21,25 @@ class GameState(enum.Enum):
     error = "Invalid column, please try again"
 
 class Player():
-    def __init__(self, playerID, gameSession, rows, cols):
+    def __init__(self, playerID, gameSession):
         self.playerID = playerID
         self.gameSession = gameSession
         self.isWinner = False
-        self.rows = rows
-        self.cols = cols
+
 class ConnectFour():
     state = GameState.isPlacing
-    def __init__(self, player):
+    def __init__(self, player, rows, cols):
         self.board = [["." for i in range(4)] for j in range(4)]
         self.player = player
-
+        self.rows = rows
+        self.cols = cols
+        
     def placeToken(self, colIdx):
         if not self.isValid(colIdx):
             return GameState.error
 
         rowIdx = self.findRowIdx(colIdx)
-        self.board[rowIdx][colIdx]
+        self.board[rowIdx][colIdx] = "X"
         
         if self.checkIfConnect(colIdx):
             self.state = GameState.isDone
